@@ -73,7 +73,9 @@ public class Principal extends JFrame {
 			public void run() {
 				try {
 					Principal frame = new Principal();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -88,7 +90,8 @@ public class Principal extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Fernanda\\Downloads\\logoPata.jpg"));
 		setTitle("PETSHOP");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 471, 417);
+		setBounds(100, 100, 470, 412);
+		
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -633,7 +636,7 @@ public class Principal extends JFrame {
 		PaginaPrincipal.setVisible(true);
 		
 		JLabel lblNewLabel_3 = new JLabel("logoPetShop");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Fernanda\\Downloads\\LogoPetshop.png"));
+		lblNewLabel_3.setIcon(new ImageIcon(Principal.class.getResource("/br/com/sistema/imagens/LogoPetshop.png")));
 		lblNewLabel_3.setBounds(10, 11, 403, 268);
 		PaginaPrincipal.add(lblNewLabel_3);
 		

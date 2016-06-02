@@ -5,5 +5,6 @@ public static void main(String [] a){
 		
 		Login login = new Login();
 		login.setVisible(true);
+		login.setLocationRelativeTo(null);
 	}
 }

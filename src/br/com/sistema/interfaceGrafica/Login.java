@@ -41,7 +41,7 @@ public class Login extends JDialog {
 	 */
 	public Login() {
 		setTitle("PETSHOP");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Fernanda\\Downloads\\logoPata.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/br/com/sistema/imagens/logoPata.jpg")));
 		setBounds(100, 100, 317, 134);
 		getContentPane().setLayout(new BorderLayout());
 		Login.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -79,6 +79,7 @@ public class Login extends JDialog {
 							}else{
 								Principal principal = new Principal();
 								principal.setVisible(true);
+								principal.setLocationRelativeTo(null);
 								dispose();
 								//VALIDAR SENHA
 							}	

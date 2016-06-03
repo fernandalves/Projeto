@@ -15,12 +15,13 @@ import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Point;
+import javax.swing.JPasswordField;
 
 public class Login extends JDialog {
 
 	private final JPanel Login = new JPanel();
 	private JTextField login;
-	private JTextField senha;
+	private JPasswordField senha;
 
 	/**
 	 * 
@@ -42,7 +43,7 @@ public class Login extends JDialog {
 	public Login() {
 		setTitle("PETSHOP");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/br/com/sistema/imagens/logoPata.jpg")));
-		setBounds(100, 100, 317, 134);
+		setBounds(100, 100, 313, 134);
 		getContentPane().setLayout(new BorderLayout());
 		Login.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(Login, BorderLayout.CENTER);
@@ -61,10 +62,9 @@ public class Login extends JDialog {
 		Login.add(login);
 		login.setColumns(10);
 		
-		senha = new JTextField();
-		senha.setBounds(174, 29, 121, 20);
+		senha = new JPasswordField();
+		senha.setBounds(174, 29, 117, 20);
 		Login.add(senha);
-		senha.setColumns(10);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

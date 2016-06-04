@@ -24,7 +24,7 @@ public class CadastroCliente extends JPanel {
 	public CadastroCliente() {
 		JPanel Clientes = new JPanel();
 		setBorder(new TitledBorder(null, "Cadastro de Clientes", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		setBounds(10, 11, 436, 269);
+		setBounds(10, 11, 436, 261);
 		setLayout(null);
 		setVisible(false);
 		
@@ -85,7 +85,7 @@ public class CadastroCliente extends JPanel {
 		add(lblEstado);
 		
 		JLabel lblContato = new JLabel("Contato");
-		lblContato.setBounds(10, 222, 46, 14);
+		lblContato.setBounds(247, 65, 46, 14);
 		add(lblContato);
 		
 		bairroCliente = new JTextField();
@@ -118,17 +118,30 @@ public class CadastroCliente extends JPanel {
 		estadoCliente.setColumns(10);
 		
 		contatoCliente = new JTextField();
-		contatoCliente.setBounds(10, 238, 160, 20);
+		contatoCliente.setBounds(249, 84, 160, 20);
 		add(contatoCliente);
 		contatoCliente.setColumns(10);
 		
-		JButton Salvar = new JButton("Salvar");
-		Salvar.setBounds(245, 237, 80, 23);
-		add(Salvar);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(10, 213, 416, 34);
+		add(panel);
 		
-		JButton Cancelar = new JButton("Cancelar ");
-		Cancelar.setBounds(328, 237, 98, 23);
-		add(Cancelar);
+		JButton button = new JButton("Salvar");
+		button.setBounds(54, 11, 70, 23);
+		panel.add(button);
+		
+		JButton button_1 = new JButton("Editar");
+		button_1.setBounds(129, 11, 76, 23);
+		panel.add(button_1);
+		
+		JButton button_2 = new JButton("Cancelar ");
+		button_2.setBounds(288, 11, 93, 23);
+		panel.add(button_2);
+		
+		JButton button_3 = new JButton("Excluir");
+		button_3.setBounds(209, 11, 76, 23);
+		panel.add(button_3);
 		
 	}
 	

@@ -17,7 +17,7 @@ public class CadastroProduto extends JPanel {
 	
 	public CadastroProduto() {
 		JPanel Produtos = new JPanel();
-		setBounds(10, 11, 436, 149);
+		setBounds(10, 11, 436, 179);
 		setBorder(new TitledBorder(null, "Cadastro de Produtos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setLayout(null);
 		setVisible(false);
@@ -69,13 +69,26 @@ public class CadastroProduto extends JPanel {
 		statusProduto.setBounds(340, 81, 86, 20);
 		add(statusProduto);
 		
-		JButton Salvar = new JButton("Salvar");
-		Salvar.setBounds(243, 112, 84, 23);
-		add(Salvar);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(11, 126, 416, 34);
+		add(panel);
 		
-		JButton Cancelar = new JButton("Cancelar ");
-		Cancelar.setBounds(332, 111, 94, 23);
-		add(Cancelar);
+		JButton button = new JButton("Salvar");
+		button.setBounds(54, 11, 70, 23);
+		panel.add(button);
+		
+		JButton button_1 = new JButton("Editar");
+		button_1.setBounds(129, 11, 76, 23);
+		panel.add(button_1);
+		
+		JButton button_2 = new JButton("Cancelar ");
+		button_2.setBounds(288, 11, 93, 23);
+		panel.add(button_2);
+		
+		JButton button_3 = new JButton("Excluir");
+		button_3.setBounds(209, 11, 76, 23);
+		panel.add(button_3);
 	}
 
 }

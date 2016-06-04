@@ -35,6 +35,9 @@ public class Principal extends JFrame {
 	private CadastroFuncionario cadastroFuncionario;
 	private CadastroFornecedor cadastroFornecedor;
 	private Logo logo;
+	private Pesquisar pesquisar;
+	private Vendas vendas;
+	private Servico servico;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -153,54 +156,64 @@ public class Principal extends JFrame {
 		});
 		mnCadastrar.add(mntmProduto);
 		
-		JMenu mnEditar = new JMenu("Editar");
-		menuBar.add(mnEditar);
-		
-		JMenuItem mntmAnimal_1 = new JMenuItem("Animal");
-		mnEditar.add(mntmAnimal_1);
-		
-		JMenuItem mntmCliente_1 = new JMenuItem("Cliente");
-		mnEditar.add(mntmCliente_1);
-		
-		JMenuItem mntmFornecedor_1 = new JMenuItem("Fornecedor");
-		mnEditar.add(mntmFornecedor_1);
-		
-		JMenuItem mntmFuncionrio = new JMenuItem("Funcion\u00E1rio");
-		mnEditar.add(mntmFuncionrio);
-		
-		JMenuItem mntmProduto_1 = new JMenuItem("Produto");
-		mnEditar.add(mntmProduto_1);
-		
-		JMenu mnBuscar = new JMenu("Buscar");
+		JMenu mnBuscar = new JMenu("Pesquisar");
 		menuBar.add(mnBuscar);
 		
-		JMenuItem mntmAnimal_2 = new JMenuItem("Animal");
-		mnBuscar.add(mntmAnimal_2);
-		
-		JMenuItem mntmCliente_2 = new JMenuItem("Cliente");
-		mnBuscar.add(mntmCliente_2);
-		
-		JMenuItem mntmFornecedor_2 = new JMenuItem("Fornecedor");
-		mnBuscar.add(mntmFornecedor_2);
-		
-		JMenuItem mntmFuncionrio_1 = new JMenuItem("Funcion\u00E1rio");
-		mnBuscar.add(mntmFuncionrio_1);
-		
-		JMenuItem mntmProduto_2 = new JMenuItem("Produto");
-		mnBuscar.add(mntmProduto_2);
+		JMenuItem mntmPesquisar = new JMenuItem("Realizar pesquisa");
+		mntmPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logo.setVisible(false);
+				cadastroCliente.setVisible(false);
+				cadastroFuncionario.setVisible(false);
+				cadastroProduto.setVisible(false);
+				cadastroAnimal.setVisible(false);
+				cadastroFornecedor.setVisible(false);
+				pesquisar.setVisible(true);
+			}
+		});
+		mnBuscar.add(mntmPesquisar);
 		
 		JMenu mnVendas = new JMenu("Vendas");
 		menuBar.add(mnVendas);
 		
+		JMenuItem mntmRealizarVenda = new JMenuItem("Realizar Venda");
+		mntmRealizarVenda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logo.setVisible(false);
+				cadastroCliente.setVisible(false);
+				cadastroFuncionario.setVisible(false);
+				cadastroProduto.setVisible(false);
+				cadastroAnimal.setVisible(false);
+				cadastroFornecedor.setVisible(false);
+				pesquisar.setVisible(false);
+				vendas.setVisible(true);
+			}
+		});
+		mnVendas.add(mntmRealizarVenda);
+		
 		JMenu mnServios = new JMenu("Servi\u00E7os");
 		menuBar.add(mnServios);
+		
+		JMenuItem mntmRealizarServio = new JMenuItem("Realizar Servi\u00E7o");
+		mntmRealizarServio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				logo.setVisible(false);
+				cadastroCliente.setVisible(false);
+				cadastroFuncionario.setVisible(false);
+				cadastroProduto.setVisible(false);
+				cadastroAnimal.setVisible(false);
+				cadastroFornecedor.setVisible(false);
+				servico.setVisible(true);
+			}
+		});
+		mnServios.add(mntmRealizarServio);
 		
 		JPanel panelPrincipal = new JPanel();
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(panelPrincipal);
 		panelPrincipal.setLayout(null);
 		
-		
+					
 		logo = new Logo();
 		panelPrincipal.add(logo);
 		logo.setVisible(true);
@@ -219,6 +232,15 @@ public class Principal extends JFrame {
 		
 		cadastroCliente = new CadastroCliente();
 		panelPrincipal.add(cadastroCliente);
+		
+		pesquisar = new Pesquisar();
+		panelPrincipal.add(pesquisar);
+		
+		vendas = new Vendas();
+		panelPrincipal.add(vendas);
+		
+		servico = new Servico();
+		panelPrincipal.add(servico);
 			
 		setVisible(true);
 	}

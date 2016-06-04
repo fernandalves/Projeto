@@ -21,7 +21,7 @@ public class CadastroAnimal extends JPanel {
 	public CadastroAnimal() {
 	
 				JPanel Animais = new JPanel();
-				setBounds(10, 11, 436, 227);
+				setBounds(10, 11, 436, 243);
 				setBorder(new TitledBorder(null, "Cadastro de Animais", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				setLayout(null);
 				setVisible(false);
@@ -79,18 +79,31 @@ public class CadastroAnimal extends JPanel {
 				obsAnimal.setBounds(10, 131, 416, 54);
 				add(obsAnimal);
 				
+				JPanel panel = new JPanel();
+				panel.setBounds(10, 196, 416, 34);
+				add(panel);
+				panel.setLayout(null);
+				
 				JButton Salvar = new JButton("Salvar");
-				Salvar.setBounds(259, 196, 70, 23);
-				add(Salvar);
+				Salvar.setBounds(54, 11, 70, 23);
+				panel.add(Salvar);
+				
+				JButton btnEditar = new JButton("Editar");
+				btnEditar.setBounds(129, 11, 76, 23);
+				panel.add(btnEditar);
 				
 				JButton Cancelar = new JButton("Cancelar ");
+				Cancelar.setBounds(288, 11, 92, 23);
+				panel.add(Cancelar);
+				
+				JButton buttonExcluir = new JButton("Excluir");
+				buttonExcluir.setBounds(209, 11, 76, 23);
+				panel.add(buttonExcluir);
 				Cancelar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						
 					}
 				});
-				Cancelar.setBounds(334, 196, 92, 23);
-				add(Cancelar);
 	}
 
 }
